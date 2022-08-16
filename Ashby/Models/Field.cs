@@ -14,7 +14,7 @@ namespace Ashby.Models
 
     public class Field
     {
-        private static readonly Dictionary<FieldType, Type> ExpectedValueTypes =
+        public static readonly Dictionary<FieldType, Type> ExpectedValueTypes =
             new Dictionary<FieldType, Type>()
             {
                 { FieldType.Text, typeof(string) },
@@ -72,9 +72,6 @@ namespace Ashby.Models
             {
                 return "None is not a valid field type.";
             }
-
-            int a = 5;
-            var b = a.GetType() == ExpectedValueTypes[this.Type];
 
             Type expectedValueType = ExpectedValueTypes[this.Type];
             if (!this.AllowedValues.All((v) => v.GetType() == expectedValueType))

@@ -40,6 +40,11 @@ namespace Ashby.Models
                     return $"Required field {field.Name} does not have an answer.";
                 }
 
+                if (fieldValue != null && fieldValue.GetType() != Field.ExpectedValueTypes[field.Type])
+                {
+                    return $"Field {field.Name} has invalid value type {fieldValue.GetType()}.";
+                }
+
                 foreach (KeyValuePair<string, object> kvp in field.DependsOn)
                 {
                     if (!this.Answers.TryGetValue(kvp.Key, out object answerValue) ||
