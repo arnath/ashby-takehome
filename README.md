@@ -8,7 +8,8 @@ The first step I took when thinking about the design for this challenge was to p
 - Users can create a form with a set of fields.
 - Users can submit responses to a form.
 - Form fields can be of types text, email, select, boolean, and file.
-- Form fields can be conditionally visible based on other fields having specific values. 
+- Form fields can be conditionally visible based on other fields having specific values.
+
 There were also two additional requirements that weren't listed in the spec but I thought were reasonable additions for a system like this:
 - Fields can be marked as required.
 - Fields can specify a set of allowed values.
